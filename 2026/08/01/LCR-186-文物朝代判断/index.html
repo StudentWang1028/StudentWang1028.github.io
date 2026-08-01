@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="题目链接  LeetCode：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;bu-ke-pai-zhong-de-shun-zi-lcof&#x2F;description&#x2F;?envType&#x3D;problem-list-v2&amp;envId&#x3D;8LSpuXqD 难度：easy  初次解答  因为places的范围为0-13，因此用num记录出现次数，如果出现出现次数大于1次首先就不满足返回fal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LCR 186.文物朝代判断">
+<meta property="og:url" content="http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/index.html">
+<meta property="og:site_name" content="StudentWang">
+<meta property="og:description" content="题目链接  LeetCode：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;bu-ke-pai-zhong-de-shun-zi-lcof&#x2F;description&#x2F;?envType&#x3D;problem-list-v2&amp;envId&#x3D;8LSpuXqD 难度：easy  初次解答  因为places的范围为0-13，因此用num记录出现次数，如果出现出现次数大于1次首先就不满足返回fal">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-01T12:03:14.000Z">
+<meta property="article:modified_time" content="2026-08-01T12:48:31.966Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="模拟">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>LCR 186.文物朝代判断</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/StudentWang1028">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2026/08/01/LCR-122-%E8%B7%AF%E5%BE%84%E5%8A%A0%E5%AF%86/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2026/08/01/200-LCR-183-%E6%9C%9B%E8%BF%9C%E9%95%9C%E4%B8%AD%E6%9C%80%E9%AB%98%E7%9A%84%E6%B5%B7%E6%8B%94/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&text=LCR 186.文物朝代判断"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&title=LCR 186.文物朝代判断"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&is_video=false&description=LCR 186.文物朝代判断"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LCR 186.文物朝代判断&body=Check out this article: http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&title=LCR 186.文物朝代判断"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&title=LCR 186.文物朝代判断"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&title=LCR 186.文物朝代判断"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&title=LCR 186.文物朝代判断"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&name=LCR 186.文物朝代判断&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&t=LCR 186.文物朝代判断"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">初次解答</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">错误&#x2F;踩坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">优化方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">复杂度分析</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        LCR 186.文物朝代判断
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">John Doe</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-08-01T12:03:14.000Z" class="dt-published" itemprop="datePublished">2026-08-01</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/leetcode/">leetcode</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/%E6%A8%A1%E6%8B%9F/" rel="tag">模拟</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>题目链接</h1>
+<ul>
+<li>LeetCode：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/bu-ke-pai-zhong-de-shun-zi-lcof/description/?envType=problem-list-v2&amp;envId=8LSpuXqD">https://leetcode.cn/problems/bu-ke-pai-zhong-de-shun-zi-lcof/description/?envType=problem-list-v2&amp;envId=8LSpuXqD</a></li>
+<li>难度：easy</li>
+</ul>
+<h1>初次解答</h1>
+<ol>
+<li>因为places的范围为0-13，因此用num记录出现次数，如果出现出现次数大于1次首先就不满足返回false;</li>
+<li>记录当前剩余补充数、开始位置</li>
+<li>如果当前不为开始位置,看num中该数是否出现过，出现过则num–，没出现过用zero代替，如果zero没有了，则不满足返回false</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">checkDynasty</span><span class="params">(<span class="type">int</span>[] places)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] num = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">14</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; places.length; i++) &#123;</span><br><span class="line">            num[places[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; num.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num[i] != <span class="number">0</span> &amp;&amp; start == -<span class="number">1</span>)</span><br><span class="line">                start = i;</span><br><span class="line">                count--;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (start != -<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (num[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (num[<span class="number">0</span>] &gt; <span class="number">0</span>)</span><br><span class="line">                        num[<span class="number">0</span>]--;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                count--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (count == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>错误/踩坑</h1>
+<ul>
+<li>忽略了可以在第一次非0数字前就进行补充的情况</li>
+</ul>
+<h1>优化方案</h1>
+<ul>
+<li>按从小到大排序，记录zero次数</li>
+<li>如果存在重复数则返回false</li>
+<li>比较非0的最大数和最小数的范围是否在5之内</li>
+</ul>
+<p>假设除去 <code>0</code> 之后，剩下的非零牌数为 $k$ 张（$1 \le k \le 5$），手中 <code>0</code> 的数量为 $5 - k$ 个。<br>
+假设除去 <code>0</code> 之后，剩下的非零牌数为 $k$ 张（$1 \le k \le 5$），手中 <code>0</code> 的数量为 $5 - k$ 个。</p>
+<ol>
+<li>
+<p>确定闭区间长度：<br>
+在没有重复元素的前提下，若非零元素的最小值为 $\text{min}$，最大值为 $\text{max}$，则包含这两个端点在内的完整连续区间为 $[\text{min}, \text{max}]$。<br>
+这个区间的总元素个数为：</p>
+<p>$$\text{区间长度} = \text{max} - \text{min} + 1$$</p>
+</li>
+<li>
+<p>计算中间缺失的数字个数：<br>
+既然区间内一共需要 $\text{max} - \text{min} + 1$ 个连续数字，而我们目前手中只有 $k$ 个非零数字，那么<strong>中间缺失的数字个数</strong>为：</p>
+<p>$$\text{缺失个数} = (\text{max} - \text{min} + 1) - k$$</p>
+</li>
+<li>
+<p>用 <code>0</code> 填补空缺的条件：<br>
+我们手中的 <code>0</code> 数量必须大于等于缺失的数字个数，即：</p>
+<p>$$5 - k \ge (\text{max} - \text{min} + 1) - k$$</p>
+<p>两边同时加上 $k$ 并化简：</p>
+<p>$$5 \ge \text{max} - \text{min} + 1 \implies \text{max} - \text{min} \le 4 &lt; 5$$</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">checkDynasty</span><span class="params">(<span class="type">int</span>[] places)</span> &#123;</span><br><span class="line">        Arrays.sort(places);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">zero</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (zero &lt; <span class="number">5</span> &amp;&amp; places[zero] == <span class="number">0</span>) &#123;</span><br><span class="line">            zero++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> zero; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (places[i] == places[i + <span class="number">1</span>])</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> places[<span class="number">4</span>] - places[zero] &lt; <span class="number">5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>复杂度分析</h1>
+<p>时间复杂度：O(nlogn)</p>
+<p>空间复杂度：O(1)</p>
+
+  </div>
+</article>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Category</a></li>
+        
+          <li><a href="/tags/">Tag</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="https://github.com/StudentWang1028">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">初次解答</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">错误&#x2F;踩坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">优化方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">复杂度分析</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&text=LCR 186.文物朝代判断"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&title=LCR 186.文物朝代判断"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&is_video=false&description=LCR 186.文物朝代判断"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LCR 186.文物朝代判断&body=Check out this article: http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&title=LCR 186.文物朝代判断"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&title=LCR 186.文物朝代判断"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&title=LCR 186.文物朝代判断"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&title=LCR 186.文物朝代判断"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&name=LCR 186.文物朝代判断&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2026/08/01/LCR-186-%E6%96%87%E7%89%A9%E6%9C%9D%E4%BB%A3%E5%88%A4%E6%96%AD/&t=LCR 186.文物朝代判断"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2026
+    John Doe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/StudentWang1028">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'StudentWang1028/StudentWang1028.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = 'Comment';
+      var utterances_theme = 'boxy-light';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+</body>
+</html>

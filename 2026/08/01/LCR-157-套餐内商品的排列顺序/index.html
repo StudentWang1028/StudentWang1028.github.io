@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="题目链接  LeetCode：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;zi-fu-chuan-de-pai-lie-lcof&#x2F;description&#x2F;?envType&#x3D;problem-list-v2&amp;envId&#x3D;8LSpuXqD 难度：mid  初次解答  由于题目限定字符串包含字母，可用长度为 26 的数组记录每个字符出现的频次。 采用回溯算法，从 &#39;a&#39; 到 &#39;z&#39;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LCR 157.套餐内商品的排列顺序">
+<meta property="og:url" content="http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/index.html">
+<meta property="og:site_name" content="StudentWang">
+<meta property="og:description" content="题目链接  LeetCode：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;zi-fu-chuan-de-pai-lie-lcof&#x2F;description&#x2F;?envType&#x3D;problem-list-v2&amp;envId&#x3D;8LSpuXqD 难度：mid  初次解答  由于题目限定字符串包含字母，可用长度为 26 的数组记录每个字符出现的频次。 采用回溯算法，从 &#39;a&#39; 到 &#39;z&#39;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-01T12:22:43.000Z">
+<meta property="article:modified_time" content="2026-08-01T12:32:21.479Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="递归">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>LCR 157.套餐内商品的排列顺序</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/StudentWang1028">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2026/08/01/LCR-138-%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2026/08/01/LCR-122-%E8%B7%AF%E5%BE%84%E5%8A%A0%E5%AF%86/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&text=LCR 157.套餐内商品的排列顺序"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&title=LCR 157.套餐内商品的排列顺序"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&is_video=false&description=LCR 157.套餐内商品的排列顺序"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LCR 157.套餐内商品的排列顺序&body=Check out this article: http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&title=LCR 157.套餐内商品的排列顺序"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&title=LCR 157.套餐内商品的排列顺序"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&title=LCR 157.套餐内商品的排列顺序"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&title=LCR 157.套餐内商品的排列顺序"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&name=LCR 157.套餐内商品的排列顺序&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&t=LCR 157.套餐内商品的排列顺序"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">初次解答</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">错误&#x2F;踩坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">优化方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">复杂度分析</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        LCR 157.套餐内商品的排列顺序
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">John Doe</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-08-01T12:22:43.000Z" class="dt-published" itemprop="datePublished">2026-08-01</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/leetcode/">leetcode</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/%E9%80%92%E5%BD%92/" rel="tag">递归</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>题目链接</h1>
+<ul>
+<li>LeetCode：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof/description/?envType=problem-list-v2&amp;envId=8LSpuXqD">https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof/description/?envType=problem-list-v2&amp;envId=8LSpuXqD</a></li>
+<li>难度：mid</li>
+</ul>
+<h1>初次解答</h1>
+<ol>
+<li>由于题目限定字符串包含字母，可用长度为 26 的数组记录每个字符出现的频次。</li>
+<li>采用回溯算法，从 <code>'a'</code> 到 <code>'z'</code> 遍历频次数组：
+<ul>
+<li>遇到频次大于 0 的字符，将其加入 <code>StringBuilder</code> 并将频次 <code>-1</code>。</li>
+<li>递归进入下一层。</li>
+<li>回溯时恢复频次并将字符从 <code>StringBuilder</code> 中移除。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String[] goodsOrder(String goods) &#123;</span><br><span class="line">        <span class="type">char</span>[] chars = <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; goods.length(); i++) &#123;</span><br><span class="line">            chars[goods.charAt(i) - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        buildGood(chars, goods.length(), <span class="keyword">new</span> <span class="title class_">StringBuilder</span>());</span><br><span class="line">        <span class="keyword">return</span> list.toArray(<span class="keyword">new</span> <span class="title class_">String</span>[list.size()]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">buildGood</span><span class="params">(<span class="type">char</span>[] chars, <span class="type">int</span> level, StringBuilder sb)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (level == <span class="number">0</span>)</span><br><span class="line">            list.add(sb.toString());</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (chars[i] != <span class="number">0</span>) &#123;</span><br><span class="line">                chars[i]--;</span><br><span class="line">                sb.append((<span class="type">char</span>) (i + <span class="string">&#x27;a&#x27;</span>));</span><br><span class="line">                buildGood(chars, level - <span class="number">1</span>, sb);</span><br><span class="line">                sb.deleteCharAt(sb.length() - <span class="number">1</span>);</span><br><span class="line">                chars[i]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>错误/踩坑</h1>
+<h1>优化方案</h1>
+<ul>
+<li>固定位置 + 交换：将字符数组分为“已固定部分”和“未固定部分”。</li>
+<li>递归函数 dfs(x) 的含义为：固定第 x 位的字符。同层剪枝去重：在固定第 x 位时，遍历可选的后方字符 c[i] (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>≥</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">i \ge x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.79549em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span><span class="mrel">≥</span><span class="mord mathit">x</span></span></span></span>)。若当前字符在第 x 位已经出现过，则跳过（剪枝），否则将其交换至第 x 位。</li>
+<li>回溯恢复：下层递归结束后，再次交换恢复原状。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    List&lt;String&gt; res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="type">char</span>[] c;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String[] goodsOrder(String goods) &#123;</span><br><span class="line">        c = goods.toCharArray();</span><br><span class="line">        dfs(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res.toArray(<span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (x == c.length - <span class="number">1</span>) &#123;</span><br><span class="line">            res.add(String.valueOf(c)); <span class="comment">// 递归到底，添加当前排列</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Set&lt;Character&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> x; i &lt; c.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (set.contains(c[i])) <span class="keyword">continue</span>; <span class="comment">// 重复字符，剪枝去重</span></span><br><span class="line">            set.add(c[i]);</span><br><span class="line"></span><br><span class="line">            swap(i, x); <span class="comment">// 交换，将 c[i] 固定在第 x 位</span></span><br><span class="line">            dfs(x + <span class="number">1</span>); <span class="comment">// 开启下层递归</span></span><br><span class="line">            swap(i, x); <span class="comment">// 恢复交换（回溯）</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="type">char</span> <span class="variable">tmp</span> <span class="operator">=</span> c[a];</span><br><span class="line">        c[a] = c[b];</span><br><span class="line">        c[b] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>复杂度分析</h1>
+<p>时间复杂度：O(n·n!)</p>
+<p>空间复杂度：O(n)</p>
+
+  </div>
+</article>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Category</a></li>
+        
+          <li><a href="/tags/">Tag</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="https://github.com/StudentWang1028">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">初次解答</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">错误&#x2F;踩坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">优化方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">复杂度分析</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&text=LCR 157.套餐内商品的排列顺序"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&title=LCR 157.套餐内商品的排列顺序"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&is_video=false&description=LCR 157.套餐内商品的排列顺序"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LCR 157.套餐内商品的排列顺序&body=Check out this article: http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&title=LCR 157.套餐内商品的排列顺序"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&title=LCR 157.套餐内商品的排列顺序"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&title=LCR 157.套餐内商品的排列顺序"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&title=LCR 157.套餐内商品的排列顺序"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&name=LCR 157.套餐内商品的排列顺序&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2026/08/01/LCR-157-%E5%A5%97%E9%A4%90%E5%86%85%E5%95%86%E5%93%81%E7%9A%84%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F/&t=LCR 157.套餐内商品的排列顺序"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2026
+    John Doe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/StudentWang1028">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'StudentWang1028/StudentWang1028.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = 'Comment';
+      var utterances_theme = 'boxy-light';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+</body>
+</html>

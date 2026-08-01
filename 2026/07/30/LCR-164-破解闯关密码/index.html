@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="题目链接 LeetCode：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof&#x2F;description&#x2F;?envType&#x3D;problem-list-v2&amp;envId&#x3D;8LSpuXqD 难度：Mid  初次解答 利用“最高位决定大方向”的特点，把数字先分桶； 同一个桶内部，再解决“谁应该排前面”的问题；">
+    <meta name="description" content="题目链接  LeetCode：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof&#x2F;description&#x2F;?envType&#x3D;problem-list-v2&amp;envId&#x3D;8LSpuXqD 难度：Mid  初次解答  利用“最高位决定大方向”的特点，把数字先分桶； 同一个桶内部，再解决“谁应该排前面”的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LCR 164. 破解闯关密码">
+<meta property="og:title" content="LCR 164.破解闯关密码">
 <meta property="og:url" content="http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/index.html">
 <meta property="og:site_name" content="StudentWang">
-<meta property="og:description" content="题目链接 LeetCode：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof&#x2F;description&#x2F;?envType&#x3D;problem-list-v2&amp;envId&#x3D;8LSpuXqD 难度：Mid  初次解答 利用“最高位决定大方向”的特点，把数字先分桶； 同一个桶内部，再解决“谁应该排前面”的问题；">
+<meta property="og:description" content="题目链接  LeetCode：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof&#x2F;description&#x2F;?envType&#x3D;problem-list-v2&amp;envId&#x3D;8LSpuXqD 难度：Mid  初次解答  利用“最高位决定大方向”的特点，把数字先分桶； 同一个桶内部，再解决“谁应该排前面”的问题">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-07-30T03:23:20.000Z">
-<meta property="article:modified_time" content="2026-07-30T03:41:30.910Z">
+<meta property="article:modified_time" content="2026-07-30T11:04:10.014Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
@@ -37,7 +37,7 @@
       
     
     <!-- title -->
-    <title>LCR 164. 破解闯关密码</title>
+    <title>LCR 164.破解闯关密码</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -55,6 +55,16 @@
     
     
 	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 	
 <meta name="generator" content="Hexo 8.1.2"></head>
 
@@ -103,23 +113,23 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&text=LCR 164. 破解闯关密码"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164. 破解闯关密码"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&is_video=false&description=LCR 164. 破解闯关密码"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=LCR 164. 破解闯关密码&body=Check out this article: http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164. 破解闯关密码"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164. 破解闯关密码"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164. 破解闯关密码"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164. 破解闯关密码"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&name=LCR 164. 破解闯关密码&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&t=LCR 164. 破解闯关密码"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&text=LCR 164.破解闯关密码"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164.破解闯关密码"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&is_video=false&description=LCR 164.破解闯关密码"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LCR 164.破解闯关密码&body=Check out this article: http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164.破解闯关密码"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164.破解闯关密码"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164.破解闯关密码"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164.破解闯关密码"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&name=LCR 164.破解闯关密码&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&t=LCR 164.破解闯关密码"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="toc-number">1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E6%AC%A1%E8%A7%A3%E7%AD%94"><span class="toc-number">2.</span> <span class="toc-text">初次解答</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E8%AF%AF-%E8%B8%A9%E5%9D%91"><span class="toc-number">3.</span> <span class="toc-text">错误&#x2F;踩坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">4.</span> <span class="toc-text">优化方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">5.</span> <span class="toc-text">复杂度分析</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">初次解答</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">错误&#x2F;踩坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">优化方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">复杂度分析</span></a></li></ol>
       </div>
     
   </span>
@@ -132,7 +142,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        LCR 164. 破解闯关密码
+        LCR 164.破解闯关密码
     </h1>
 
 
@@ -169,25 +179,28 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><ul>
-<li>LeetCode：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/description/?envType=problem-list-v2&envId=8LSpuXqD">https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/description/?envType=problem-list-v2&amp;envId=8LSpuXqD</a></li>
+    <h1>题目链接</h1>
+<ul>
+<li>LeetCode：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/description/?envType=problem-list-v2&amp;envId=8LSpuXqD">https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/description/?envType=problem-list-v2&amp;envId=8LSpuXqD</a></li>
 <li>难度：Mid</li>
 </ul>
-<h1 id="初次解答"><a href="#初次解答" class="headerlink" title="初次解答"></a>初次解答</h1><ol>
+<h1>初次解答</h1>
+<ol>
 <li>利用“最高位决定大方向”的特点，把数字先分桶；</li>
 <li>同一个桶内部，再解决“谁应该排前面”的问题；</li>
 <li>桶排序完成后，按桶顺序拼接</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">crackPassword</span><span class="params">(<span class="type">int</span>[] password)</span> &#123;</span><br><span class="line">        String[][] buckets = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">10</span>][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i&lt;password.length;i++)&#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> String.valueOf(password[i]);</span><br><span class="line">            <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> s.charAt(<span class="number">0</span>);</span><br><span class="line">            expand(buckets,c-<span class="string">&#x27;0&#x27;</span>,s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i&lt;=<span class="number">9</span>;i++)&#123;</span><br><span class="line">            sort(buckets[i]);</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;j&lt;buckets[i].length;j++)&#123;</span><br><span class="line">                sb.append(buckets[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(String[] bucket)</span>&#123;</span><br><span class="line">        Arrays.sort(bucket,(a,b)-&gt;&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> Math.max(a.length(),b.length());</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i&lt;max;i++)&#123;</span><br><span class="line">                <span class="type">char</span> <span class="variable">o1</span> <span class="operator">=</span> i&lt;a.length()?a.charAt(i):a.charAt(<span class="number">0</span>);</span><br><span class="line">                <span class="type">char</span> <span class="variable">o2</span> <span class="operator">=</span> i&lt;b.length()?b.charAt(i):b.charAt(<span class="number">0</span>);</span><br><span class="line">                <span class="keyword">if</span>(o1!=o2) <span class="keyword">return</span> o1-o2;</span><br><span class="line">                <span class="keyword">if</span>(o1==o2&amp;&amp;max-<span class="number">1</span>==i) <span class="keyword">return</span> b.length()-a.length(); </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">expand</span><span class="params">(String[][] buckets, <span class="type">int</span> index,String addNum)</span>&#123;</span><br><span class="line">        String[] bucket = <span class="keyword">new</span> <span class="title class_">String</span>[buckets[index].length+<span class="number">1</span>];</span><br><span class="line">        bucket = Arrays.copyOf(buckets[index], buckets[index].length + <span class="number">1</span>);</span><br><span class="line">        bucket[buckets[index].length]=addNum;</span><br><span class="line">        buckets[index] = bucket;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="错误-踩坑"><a href="#错误-踩坑" class="headerlink" title="错误&#x2F;踩坑"></a>错误&#x2F;踩坑</h1><ul>
-<li>错误1：补位方式错误；字符串不足时，只重复第一个字符。password &#x3D; [12,121]，其实无法比较。 </li>
+<h1>错误/踩坑</h1>
+<ul>
+<li>错误1：补位方式错误；字符串不足时，只重复第一个字符。password = [12,121]，其实无法比较。</li>
 <li>错误2：相等时用长度判断；其实是在发现错误1以后进行的兜底，这个恰好可以解决[12,121]的问题，但是像[830,8308]就会出错。</li>
 </ul>
-<h1 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h1><p>直接比较两个数字拼接后的结果：若 a+b &lt; b+a，则 a 排在前面</p>
+<h1>优化方案</h1>
+<p>直接比较两个数字拼接后的结果：若 a+b &lt; b+a，则 a 排在前面</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">crackPassword</span><span class="params">(<span class="type">int</span>[] password)</span> &#123;</span><br><span class="line">        String[] strs = <span class="keyword">new</span> <span class="title class_">String</span>[password.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; password.length; i++) &#123;</span><br><span class="line">            strs[i] = String.valueOf(password[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        Arrays.sort(strs, (a, b) -&gt; (a + b).compareTo(b + a));</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; password.length; i++) &#123;</span><br><span class="line">            sb.append(strs[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h1><p>时间复杂度：O(nlogn)</p>
+<h1>复杂度分析</h1>
+<p>时间复杂度：O(nlogn)</p>
 <p>空间复杂度：O(n)</p>
 
   </div>
@@ -226,23 +239,23 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="toc-number">1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E6%AC%A1%E8%A7%A3%E7%AD%94"><span class="toc-number">2.</span> <span class="toc-text">初次解答</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E8%AF%AF-%E8%B8%A9%E5%9D%91"><span class="toc-number">3.</span> <span class="toc-text">错误&#x2F;踩坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">4.</span> <span class="toc-text">优化方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">5.</span> <span class="toc-text">复杂度分析</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">初次解答</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">错误&#x2F;踩坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">优化方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">复杂度分析</span></a></li></ol>
       </div>
     
 
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&text=LCR 164. 破解闯关密码"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164. 破解闯关密码"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&is_video=false&description=LCR 164. 破解闯关密码"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=LCR 164. 破解闯关密码&body=Check out this article: http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164. 破解闯关密码"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164. 破解闯关密码"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164. 破解闯关密码"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164. 破解闯关密码"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&name=LCR 164. 破解闯关密码&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&t=LCR 164. 破解闯关密码"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&text=LCR 164.破解闯关密码"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164.破解闯关密码"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&is_video=false&description=LCR 164.破解闯关密码"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LCR 164.破解闯关密码&body=Check out this article: http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164.破解闯关密码"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164.破解闯关密码"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164.破解闯关密码"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&title=LCR 164.破解闯关密码"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&name=LCR 164.破解闯关密码&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2026/07/30/LCR-164-%E7%A0%B4%E8%A7%A3%E9%97%AF%E5%85%B3%E5%AF%86%E7%A0%81/&t=LCR 164.破解闯关密码"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
